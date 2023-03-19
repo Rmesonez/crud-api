@@ -47,10 +47,10 @@ const ProductList = () => {
     setName("");
     setCategory("");
     setPrice("");
-    setIsAvailable(false);
     setOperation(op);
     if (op === 1) {
       setTitle("Add Product");
+      setIsAvailable(false);
     } else if (op === 2) {
       setTitle("Edit Product");
       setId(id);
