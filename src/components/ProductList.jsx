@@ -14,7 +14,7 @@ const ProductList = () => {
   const [id, setId] = useState(0);
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
-  const [isAvailable, setIsAvailable] = useState(null);
+  const [isAvailable, setIsAvailable] = useState(false);
   const [operation, setOperation] = useState("1");
   const [title, setTitle] = useState("");
 
@@ -48,9 +48,9 @@ const ProductList = () => {
     setCategory("");
     setPrice("");
     setOperation(op);
+    setIsAvailable(false);
     if (op === 1) {
       setTitle("Add Product");
-      setIsAvailable(false);
     } else if (op === 2) {
       setTitle("Edit Product");
       setId(id);
@@ -180,10 +180,12 @@ const ProductList = () => {
                 product?.isAvailable ? (
                 <div className="available">
                     <h4 style={{color:'green'}}>Available</h4>
+                    {/* <input type="checkbox" checked={true} /> */}
                 </div>
                 ) : (
                 <div className="available">
                     <h4 style={{color:'red'}}>Not Available</h4>
+                    {/* <input type="checkbox" checked={false} /> */}
                 </div>
                 )}
  
@@ -281,7 +283,7 @@ const ProductList = () => {
                   className="checkbox"
                   placeholder="Product Availability"
                   id="isAvailable"
-                  value={isAvailable}
+                  checked={ isAvailable }
                   onChange={(e) => {
                     setIsAvailable(e.target.checked);
                   }}
