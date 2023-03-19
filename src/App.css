@@ -3,21 +3,81 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(to right, #544a7d, #ffd452);
-}
-
-h1{
-  font-size: 2rem;
-  font-weight: 600;
-  color: #c5e60e;
+  /* background-image: linear-gradient(180deg, #544a7d, #ffd452); */
+  background-image: url('https://images.pexels.com/photos/5110959/pexels-photo-5110959.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  user-select: none;
 }
 
 .header{
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  margin: 20px auto 80px;
+  margin: 20px auto 10px;
+}
+
+.header h1{
+  display: inline-block;
+  position: relative;
+  letter-spacing: 2px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #c5e60e;
+  margin-left: 150px;
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+h1::after, h1::before{
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background-color: currentColor;/*para que cambie automaticamente al cambiar el color deltexto*/
+  top: 0.6em;
+  transform: scale(0);
+  transition: all 0.2s ease;
+
+}
+h1:hover::before, h1:hover::after{
+  transform: scale(1);
+}
+h1::before{
+  left: -130px;
+}
+h1::after{
+  right: -130px;
+}
+
+.header button{
+  display: inline-block;
+  position: relative;
+  margin-right: 150px;
+}
+
+.header button::after, .header button::before{
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background-color: currentColor;/*para que cambie automaticamente al cambiar el color deltexto*/
+  top: 1.7rem;
+  transform: scale(0);
+  transition: all 0.2s ease;
+
+}
+.header button:hover::before, .header button:hover::after{
+  transform: scale(1);
+}
+.header button::before{
+  left: -130px;
+}
+.header button::after{
+  right: -130px;
 }
 
 .grid{
@@ -26,7 +86,7 @@ h1{
   height: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: .5rem;
+  gap: .2rem;
 }
 
 .card{
@@ -62,7 +122,7 @@ h1{
 .card span{
   font-size: 1.2rem;
   font-weight: 600;
-  color: #916d6d;
+  color: #e40c0c;
 }
 
 .card input{
@@ -81,14 +141,13 @@ h1{
   font-size: 0.5rem;
 }
 
-.input-group input{
-  width: 40px;
-  height: 37px;
-}
-
 .buttons{
   margin: 1rem;
   display: flex;
   justify-content: space-between;
   width: 50%;
+}
+
+.buttons i{
+  font-size: 1.5rem;
 }
