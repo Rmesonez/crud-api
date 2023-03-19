@@ -11,7 +11,7 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [name, setName] = useState("");
-//   const [id, setId] = useState(0);
+  const [id, setId] = useState(0);
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [isAvailable, setIsAvailable] = useState(null);
@@ -42,7 +42,8 @@ const ProductList = () => {
     }, 4000);
   }, []);
 
-  const openModal = (op, name, category, price, available) => {
+  const openModal = (op, id, name, category, price, available) => {
+    setId(0);
     setName("");
     setCategory("");
     setPrice("");
@@ -52,7 +53,7 @@ const ProductList = () => {
       setTitle("Add Product");
     } else if (op === 2) {
       setTitle("Edit Product");
-    //   setId(id);
+      setId(id);
       setName(name);
       setCategory(category);
       setPrice(price);
@@ -87,17 +88,16 @@ const ProductList = () => {
             show_alert("Error saving product", "error");
           });
       } else if (operation === 2) {
-        updateProduct();
+        updateProduct(id);
       }
       setLoading(false);
     }
   };
 
-  const updateProduct = () => {
+  const updateProduct = (id) => {
     setLoading(true);
     axios
       .put(`https://products-crud.academlo.tech/products/${id}/`, {
-        id: id,
         name: name.trim(),
         category: category.trim(),
         price: price,
@@ -192,6 +192,7 @@ const ProductList = () => {
                   onClick={() =>
                     openModal(
                       2,
+                      product?.id,
                       product?.name,
                       product?.category,
                       product?.price,

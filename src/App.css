@@ -26,21 +26,33 @@ h1{
   height: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 1rem;
+  grid-gap: .5rem;
 }
 
 .card{
   background-color: #eee1ee;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,1);
-  margin: 1rem;
+  margin: .5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   text-transform: capitalize;
+  background: linear-gradient(rgb(174, 175, 241),rgb(215, 176, 230));
+  transition:.6s;
+  
+  transform: rotatex(75deg) translatey(-200px) translatez(-100px);
 }
+
+.card:hover{
+  transform: rotatex(0deg);
+  transform: rotatez(0deg);
+  transition:.6s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
 
 .card h2{
   font-size: 1.8rem;
