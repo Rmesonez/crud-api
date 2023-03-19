@@ -1,0 +1,82 @@
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to right, #544a7d, #ffd452);
+}
+
+h1{
+  font-size: 2rem;
+  font-weight: 600;
+  color: #c5e60e;
+}
+
+.header{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 20px auto 80px;
+}
+
+.grid{
+  margin: 0 auto;
+  width: 70%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
+
+.card{
+  background-color: #eee1ee;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,1);
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-transform: capitalize;
+}
+
+.card h2{
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.card span{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #916d6d;
+}
+
+.card input{
+  width: 20px;
+  height: 30px;
+  vertical-align: bottom;
+  margin: 0 10px;
+}
+
+.available{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  font-size: 0.5rem;
+}
+
+.input-group input{
+  width: 40px;
+  height: 37px;
+}
+
+.buttons{
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
